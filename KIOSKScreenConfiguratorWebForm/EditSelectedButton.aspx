@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditSelectedButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.EditSelectedButton" %>
+﻿<%@ Page Title="Edit" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditSelectedButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.EditSelectedButton" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">

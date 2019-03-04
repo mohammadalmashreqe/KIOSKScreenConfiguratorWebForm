@@ -31,8 +31,10 @@ namespace KIOSKScreenConfiguratorWebForm
                     Button1.Enabled = false;
                     Button1.Text = "Add Activity" + button.getList().Count + "/5";
                     Button_save.Enabled = false;
-                    //Button2.Visible = false; 
+
+                    
                 }
+               
             }
             catch (Exception ex)
             {

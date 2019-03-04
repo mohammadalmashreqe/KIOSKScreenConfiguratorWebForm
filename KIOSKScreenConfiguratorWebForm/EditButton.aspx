@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.EditButton" %>
+﻿<%@ Page Title="Edit buttons" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.EditButton" %>
 
 
 

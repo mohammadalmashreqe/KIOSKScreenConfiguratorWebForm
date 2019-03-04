@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.AddButton" %>
+﻿<%@ Page Title="Add Button" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.AddButton" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+  
     <br />
     <br />
   
@@ -71,7 +71,7 @@
                      <asp:Panel ID="Panel1" runat="server">
                          <div class="form-group ">
 
-                             <label>Number of printed tickets :<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="enter value between 1 and 5 " ForeColor="Red" MaximumValue="5" MinimumValue="1" ValidationGroup="b"></asp:RangeValidator>
+                             <label>Number of printed tickets :<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="enter value between 1 and 5 " ForeColor="Red" MaximumValue="5" MinimumValue="1" ValidationGroup="b" Display="Dynamic"></asp:RangeValidator>
                              <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox1" ErrorMessage="Required" ForeColor="Red" ValidationGroup="b"></asp:RequiredFieldValidator>
                              </label>
                              &nbsp;<asp:TextBox ID="TextBox1" CssClass="form-control" runat="server" ValidationGroup="b"></asp:TextBox>

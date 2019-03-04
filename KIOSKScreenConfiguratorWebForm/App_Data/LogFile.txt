@@ -19,3 +19,13 @@
 3/4/2019 10:33:38 AM ==> Thread was being aborted.
 3/4/2019 10:34:11 AM ==> Thread was being aborted.
 3/4/2019 10:44:55 AM ==> Thread was being aborted.
+3/4/2019 11:19:24 AM ==> Thread was being aborted.
+3/4/2019 11:19:26 AM ==> Thread was being aborted.
+3/4/2019 11:19:30 AM ==> Thread was being aborted.
+3/4/2019 11:19:31 AM ==> Thread was being aborted.
+3/4/2019 11:19:33 AM ==> Thread was being aborted.
+3/4/2019 11:46:51 AM ==> Thread was being aborted.
+3/4/2019 2:56:32 PM ==> Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+3/4/2019 2:57:05 PM ==> Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index

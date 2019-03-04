@@ -197,6 +197,7 @@ namespace KIOSKScreenConfiguratorWebForm
 
                 string r = GridView1.SelectedRow.Cells[0].Text;
                 Confirmation_activity.deleteActivity(GridView1.SelectedRow.Cells[0].Text);
+               
                 GridView1.DataSource = Confirmation_activity.getConActivity(id);
                 GridView1.DataBind();
             }
