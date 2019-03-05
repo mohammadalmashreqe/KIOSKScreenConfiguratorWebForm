@@ -59,6 +59,23 @@
                 </div>
             </div>
         </div>
+       
+        <br />
+        <br />
+        <div class ="container">
+      <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server"  ShowStartingNode="False" />
+
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Bold="true" 
+            Font-Names="Lucida Sans Unicode"
+            BackColor="Azure" OnItemCreated="SiteMapPath1_ItemCreated" 
+                >
+               
+            </asp:SiteMapPath>
+         
+<hr />
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+</div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

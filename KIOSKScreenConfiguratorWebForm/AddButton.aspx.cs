@@ -31,8 +31,8 @@ namespace KIOSKScreenConfiguratorWebForm
                     Button1.Enabled = false;
                     Button1.Text = "Add Activity" + button.getList().Count + "/5";
                     Button_save.Enabled = false;
+                    isprint = false;
 
-                    
                 }
                
             }
@@ -255,6 +255,8 @@ namespace KIOSKScreenConfiguratorWebForm
 
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" +"Button with activity  saved');", true);
 
+                GridView1.DataSource = BusinessLayer.Button.getButtons();
+                GridView1.DataBind();
             }
             catch (Exception ex)
             {

@@ -16,8 +16,10 @@ namespace KIOSKScreenConfiguratorWebForm
         {
             try
             {
-                if (Request.Cookies == null)
-                    Response.Write("please select Button");
+                if (!Request.Cookies.AllKeys.Contains("ButtonInfo"))
+                {
+                    Response.Redirect("EditButton.aspx");
+                }
                 else
                 {
                     TextBox_text.Text = Request.Cookies["ButtonInfo"]["Text"].ToString();
@@ -175,7 +177,15 @@ namespace KIOSKScreenConfiguratorWebForm
                 if (confirmValue == "Yes")
                 {
                     if (b.DeleteButton())
+                    {
+                                              Request.Cookies.Remove("ButtonInfo");
+
+                        Request.Cookies.Clear();
+                        Session.Abandon();
+                      
+                          Response.Cookies.Clear();
                         Response.Redirect("EditButton.aspx");
+                    }
                 }
 
 

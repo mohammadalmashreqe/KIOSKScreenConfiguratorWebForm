@@ -79,9 +79,10 @@ namespace KIOSKScreenConfiguratorWebForm
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)
         {
+            
             try
             {
-                if (e.Row.RowType == DataControlRowType.Header)
+                if (e.Row.RowType == DataControlRowType.Header )
                     e.Row.CssClass = "table-primary";
 
                 //Add CSS class on normal row.
@@ -93,6 +94,8 @@ namespace KIOSKScreenConfiguratorWebForm
                 if (e.Row.RowType == DataControlRowType.DataRow &&
                           e.Row.RowState == DataControlRowState.Alternate)
                     e.Row.CssClass = "table-hover";
+
+
             }
             catch (Exception ex)
             {

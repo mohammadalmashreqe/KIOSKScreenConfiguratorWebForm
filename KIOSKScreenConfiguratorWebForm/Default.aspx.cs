@@ -71,7 +71,7 @@ namespace KIOSKScreenConfiguratorWebForm
 
                     string col3 = "<button type = \"button\" class=\"btn btn-info\" data-toggle=\"collapse\" data-target=\"#demo" + (i + 2) + "\">Request identification</button>  <div id = \"demo" + (i + 2) + "\" class=\"collapse \">" + IdentAct + " </div>";
 
-                    string html = " <div class=\"card\"> <div class=\"card-body\"> <h4><b >name : " + row["name"].ToString() + " </b></h4>  <p>Order : " + row["order"] + "</p> " + col + "" + "" + col2 + "" + " " + col3 + "  <br> </div> <br> </div> <hr>";
+                    string html = " <div class=\"\"> <div class=\"card-body\"> <h4 class=\"card-text\"><b >name : " + row["name"].ToString() + " </b></h4>  <p>Order : " + row["order"] + "</p> " + col + "" + "" + col2 + "" + " " + col3 + "  <br> </div> <br> </div> <hr>";
                     h1.InnerHtml = html;
                     contentArea.Controls.Add(h1);
 

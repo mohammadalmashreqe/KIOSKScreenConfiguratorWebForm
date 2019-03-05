@@ -1,0 +1,19 @@
+﻿
+<?xmlversionxmlversion = "1.0"encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode  >
+  <siteMapNode url="~/Default" title="Home" description="Home Page"/>
+  <siteMapNode url="~/" title="Home" description="Home Page">
+
+    <siteMapNode url="~/EditButton" title="Edit Button" description="EditButton">
+      <siteMapNode url="~/EditSelectedButton" title="Edit selected button" description="Edit Selected Button" />
+     
+    </siteMapNode>
+    <siteMapNode url="~/AddButton" title="Add Button" description="Add Button" />
+
+    <siteMapNode url="~/About" title="About Us" description="About Us Page" />
+    <siteMapNode url="~/Contact" title="Contact Us" description="Contact Us Page" />
+    </siteMapNode></siteMapNode>
+      </siteMap>
+
+    
