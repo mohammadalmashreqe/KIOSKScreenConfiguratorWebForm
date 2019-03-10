@@ -15,6 +15,12 @@ namespace KIOSKScreenConfiguratorWebForm
     public partial class _Default : Page
     {
 
+        /// <summary>
+        /// load all buttons from database and display its at the screen 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try

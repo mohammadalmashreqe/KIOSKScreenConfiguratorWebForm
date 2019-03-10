@@ -11,7 +11,11 @@ namespace KIOSKScreenConfiguratorWebForm
 {
     public partial class EditButton : System.Web.UI.Page
     {
-
+        /// <summary>
+        /// load data and bind it in grid view 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             GridView1.DataSource = BusinessLayer.Button.getButtons();
@@ -21,7 +25,11 @@ namespace KIOSKScreenConfiguratorWebForm
             GridView1.Columns[0].Visible = false;
           
         }
-
+        /// <summary>
+        /// event to add event listner to each row in grid view to be selectable 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
 
@@ -33,7 +41,11 @@ namespace KIOSKScreenConfiguratorWebForm
                
             }
         }
-
+        /// <summary>
+        /// add event to grid view to redirct to anthor form to edit selected button  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 

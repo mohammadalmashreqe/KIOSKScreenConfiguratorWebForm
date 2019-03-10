@@ -6,6 +6,9 @@ using System.Web;
 
 namespace KIOSKScreenConfiguratorWebForm
 {
+    /// <summary>
+    /// class to write runTime errors to the file 
+    /// </summary>
     public class ErrorLogger
     {
         private static string sLogFormat;

@@ -12,6 +12,11 @@ namespace KIOSKScreenConfiguratorWebForm
 {
     public partial class EditSelectedButton : System.Web.UI.Page
     {
+        /// <summary>
+        /// // display the info of selected button to update it 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -97,7 +102,11 @@ namespace KIOSKScreenConfiguratorWebForm
                 ErrorLogger.ErrorLog(file, ex.Message);
             }
         }
-
+        /// <summary>
+        /// make  grid view selectable 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             try
@@ -116,7 +125,11 @@ namespace KIOSKScreenConfiguratorWebForm
                 ErrorLogger.ErrorLog(file, ex.Message);
             }
         }
-
+        /// <summary>
+        /// load activity 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Button2_Click(object sender, EventArgs e)
         {
             try
@@ -132,6 +145,11 @@ namespace KIOSKScreenConfiguratorWebForm
                 ErrorLogger.ErrorLog(file, ex.Message);
             }
         }
+        /// <summary>
+        /// load activity 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -148,7 +166,11 @@ namespace KIOSKScreenConfiguratorWebForm
             }
 
         }
-
+        /// <summary>
+        /// load activity 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Button3_Click(object sender, EventArgs e)
         {
             try
@@ -164,7 +186,11 @@ namespace KIOSKScreenConfiguratorWebForm
             }
 
         }
-
+        /// <summary>
+        /// delete button 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Button_delete_Click(object sender, EventArgs e)
         {
             try
@@ -198,6 +224,11 @@ namespace KIOSKScreenConfiguratorWebForm
                 ErrorLogger.ErrorLog(file, ex.Message);
             }
         }
+        /// <summary>
+        /// delete activity 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         protected void Button4_Click(object sender, EventArgs e)
         {
