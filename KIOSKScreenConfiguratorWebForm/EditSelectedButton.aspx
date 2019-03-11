@@ -26,7 +26,7 @@
 &nbsp;<asp:TextBox ID="TextBox_order" CssClass="form-control" runat="server"></asp:TextBox>
 
             </div>
-            <asp:Button ID="Button_Edit" runat="server" Text="Update" CssClass="btn btn-primary" />
+            <asp:Button ID="Button_Edit" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="Button_Edit_Click" OnClientClick="Inform()" />
             <asp:Button ID="Button_delete" runat="server" Text="Delete button" CssClass="btn btn-primary" OnClick="Button_delete_Click" OnClientClick = "Confirm()" />
 
         </div>  
@@ -76,6 +76,9 @@
             }
             document.forms[0].appendChild(confirm_value);
         }
+
+      
+    
     </script>
 
 

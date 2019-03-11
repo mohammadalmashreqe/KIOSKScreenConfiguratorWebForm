@@ -21,8 +21,7 @@ namespace KIOSKScreenConfiguratorWebForm
             GridView1.DataSource = BusinessLayer.Button.getButtons();
           
             GridView1.DataBind();
-            if(GridView1.Columns.Count>0)
-            GridView1.Columns[0].Visible = false;
+            
           
         }
         /// <summary>

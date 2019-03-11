@@ -26,12 +26,14 @@ namespace KIOSKScreenConfiguratorWebForm
                     Response.Redirect("EditButton.aspx");
                 }
                 else
-                {
-                    TextBox_text.Text = Request.Cookies["ButtonInfo"]["Text"].ToString();
-                    TextBox_name.Text = Request.Cookies["ButtonInfo"]["Name"].ToString();
-                    TextBox_order.Text = Request.Cookies["ButtonInfo"]["Order"].ToString();
-                    if (!IsPostBack)
+                {  if (!IsPostBack)
+                    {
+                        TextBox_text.Text = Request.Cookies["ButtonInfo"]["Text"].ToString();
+                        TextBox_name.Text = Request.Cookies["ButtonInfo"]["Name"].ToString();
+                        TextBox_order.Text = Request.Cookies["ButtonInfo"]["Order"].ToString();
+
                         Button4.Visible = false;
+                    }
 
                 }
             }
@@ -249,6 +251,43 @@ namespace KIOSKScreenConfiguratorWebForm
             }
 
 
+        }
+
+        protected void Button_Edit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(Request.Cookies["ButtonInfo"]["id"].ToString());
+
+
+                string name = TextBox_name.Text;
+                string order = TextBox_order.Text;
+                string text = TextBox_text.Text;
+
+                BusinessLayer.Button b = new BusinessLayer.Button();
+                b.ButtonName = name;
+                b.Order = int.Parse(order);
+                b.Text = text;
+
+                b.ID1 = id;
+
+                if(b.updatButton())
+                {
+                    Response.Write("<script> alert ('button updated'); </script>");
+                    TextBox_name.Text = name;
+                    TextBox_order.Text = order;
+                    TextBox_text.Text = text;
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                String file = HostingEnvironment.MapPath(@"/App_Data/LogFile.txt");
+                ErrorLogger.ErrorLog(file, ex.Message);
+            }
         }
     }
 }
