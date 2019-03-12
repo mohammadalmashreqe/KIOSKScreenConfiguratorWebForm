@@ -7,7 +7,8 @@
 
   
     <div class="row ">
-        
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
         <div class="col-md-6 ">
             <h1>Add button</h1>
             <div class="form-group">
@@ -40,10 +41,10 @@
            
             <asp:Button ID="Button_save" CssClass="btn btn-success" runat="server" Text="Save" OnClick="Button_save_Click" />
         </div>
-
-
-
-
+</ContentTemplate>
+</asp:UpdatePanel>
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+              <ContentTemplate>
             <div class="col-md-5">
                 <h1>Add activity</h1>
 
@@ -119,9 +120,14 @@
 
             </div>
 
+              </ContentTemplate>
+</asp:UpdatePanel>
+
 
     </div>
         <div class ="row">
+            <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                  <ContentTemplate>
         <div class="col-md-6" >
             <h1>Button List</h1>
              <asp:GridView CssClass="table table-striped table-hover table-bordered" ID="GridView1" runat="server" Width="60%"></asp:GridView>
@@ -131,5 +137,7 @@
               <p>  <asp:ListBox ID="ListBox1" runat="server" Width="50%" CssClass="list-group" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged1"></asp:ListBox>
                 </p>
             </div>
+</ContentTemplate>
+            </asp:UpdatePanel>
         </div>
 </asp:Content>
