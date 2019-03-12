@@ -1,8 +1,14 @@
 ﻿<%@ Page Title="Edit" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditSelectedButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.EditSelectedButton" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <div class="row">
-     
+  
+
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Button_Edit" />
+
+            </Triggers>
+            <ContentTemplate>
         <div class="col-md-4 ">
             <h1>Edit button</h1>
             <div class="form-group">
@@ -29,13 +35,19 @@
             <asp:Button ID="Button_Edit" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="Button_Edit_Click" OnClientClick="Inform()" />
             <asp:Button ID="Button_delete" runat="server" Text="Delete button" CssClass="btn btn-primary" OnClick="Button_delete_Click" OnClientClick = "Confirm()" />
 
+            <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
+                <ProgressTemplate>
+            please waite .....
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+
         </div>  
 
 
-         
-       
-
-          
+        </ContentTemplate>
+       </asp:UpdatePanel>
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+          <ContentTemplate>
             <h1>Activity </h1>
 
                  <div class="form-group">
@@ -45,8 +57,8 @@
                        <asp:Button ID="Button3" runat="server" Text="Confirmation activities" CssClass="btn btn-info" OnClick="Button3_Click" />
                   
                      </div>
-                <div class="col-md-4">
-                </div>
+        <div class="col-md-4">
+        </div>
              <div class="col-md-6">
                     <asp:GridView CssClass="table table-hover" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCreated="GridView1_RowCreated" BorderStyle="Outset" EmptyDataText="No activities found">
                         <EmptyDataRowStyle ForeColor="Red" />
@@ -54,7 +66,9 @@
                  <asp:Button ID="Button4" runat="server" Text="Delete" CssClass="btn btn-danger" OnClick="Button4_Click" />
                 </div>
                </div>
-       
+
+          </ContentTemplate>
+       </asp:UpdatePanel>
         
            
 
@@ -82,4 +96,5 @@
     </script>
 
 
+    </div>
 </asp:Content>

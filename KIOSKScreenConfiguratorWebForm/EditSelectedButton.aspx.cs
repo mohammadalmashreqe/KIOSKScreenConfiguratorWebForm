@@ -32,9 +32,9 @@ namespace KIOSKScreenConfiguratorWebForm
                         TextBox_name.Text = Request.Cookies["ButtonInfo"]["Name"].ToString();
                         TextBox_order.Text = Request.Cookies["ButtonInfo"]["Order"].ToString();
 
-                        Button4.Visible = false;
+                        
                     }
-
+Button4.Visible = false;
                 }
             }
             catch(Exception ex)
@@ -273,7 +273,7 @@ namespace KIOSKScreenConfiguratorWebForm
 
                 if(b.updatButton())
                 {
-                    Response.Write("<script> alert ('button updated'); </script>");
+                    System.Threading.Thread.Sleep(2000);
                     TextBox_name.Text = name;
                     TextBox_order.Text = order;
                     TextBox_text.Text = text;
