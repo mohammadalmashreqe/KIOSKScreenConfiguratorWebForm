@@ -1,4 +1,10 @@
 ﻿<%@ Page Title="Edit" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditSelectedButton.aspx.cs" Inherits="KIOSKScreenConfiguratorWebForm.EditSelectedButton" %>
+<asp:Content  ID="Head" ContentPlaceHolderID="Head" runat="server">
+    
+    
+
+    <link href="popupstyle.css" rel="stylesheet" />
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
   
@@ -9,7 +15,7 @@
 
             </Triggers>
             <ContentTemplate>
-        <div class="col-md-4 ">
+        <div class="col-md-6 ">
             <h1>Edit button</h1>
             <div class="form-group">
                 <label>name : 
@@ -19,13 +25,7 @@
                 <asp:TextBox ID="TextBox_name" CssClass="form-control" runat="server"></asp:TextBox>
 
             </div>
-            <div class="form-group">
-                <label>Text : 
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox_text" ErrorMessage="Required" ForeColor="Red"></asp:RequiredFieldValidator>
-                </label>
-                <asp:TextBox ID="TextBox_text" CssClass="form-control" runat="server"></asp:TextBox>
-
-            </div>
+      
             <div class="form-group ">
 
                 <label>Order :</label><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox_order" ErrorMessage="Required" Font-Bold="True" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -52,49 +52,95 @@
 
                  <div class="form-group">
                    <br />
-                       <asp:Button ID="Button2" runat="server" Text="Print ticket type Activities"  CssClass="btn btn-info" OnClick="Button2_Click"/>
-                       <asp:Button ID="Button1" runat="server" Text="Request identification activities" CssClass="btn btn-info" OnClick="Button1_Click"  />
-                       <asp:Button ID="Button3" runat="server" Text="Confirmation activities" CssClass="btn btn-info" OnClick="Button3_Click" />
                   
                      </div>
         <div class="col-md-4">
         </div>
-             <div class="col-md-6">
-                    <asp:GridView CssClass="table table-hover" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCreated="GridView1_RowCreated" BorderStyle="Outset" EmptyDataText="No activities found">
-                        <EmptyDataRowStyle ForeColor="Red" />
-                    </asp:GridView>
-                 <asp:Button ID="Button4" runat="server" Text="Delete" CssClass="btn btn-danger" OnClick="Button4_Click" />
-                </div>
-               </div>
+              <div class="col-md-6">
+                  <asp:GridView  CssClass="table table-hover" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowCreated="GridView1_RowCreated" BorderStyle="Outset" EmptyDataText="No activities found">
+                      <EmptyDataRowStyle ForeColor="Red" />
+                  </asp:GridView>
 
+                
+             
+                      <asp:Button ID="Button5" runat="server" CssClass="open-button btn btn-primary" Text="Edit" OnClick="Button5_Click" />
+               
+                  </div>
+              </div>
+         
+    <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+        <ContentTemplate> 
+    <div class="form-popup" id="myForm">
+        <div  class="form-container">
+            <h1>Edit Activity</h1>
+            <label for="em"><b>Type :</b></label>
+            <input runat="server" ID="TextBox_type" type="text" readonly="readonly"  name="em" />
+            <label for="email"><b>Information Message :</b></label>
+            <input runat="server" ID="TextBox_infoMsg" type="text"  name="email" />
+           
+            <asp:Panel runat="server" ID="panel_print">
+            <label for="psw"><b>Number of printed tickets: </b></label>
+                <input type="text" runat="server" ID="TextBox_numoftick" name="psw" />
+            </asp:Panel>
+            
+            <asp:Panel runat="server" ID="panel_confirm">
+                
+                <label for="to"><b>Time Out : </b></label>
+                <input type="text" runat="server" ID="TextBox_Timeout" name="to" />
+            </asp:Panel>
+
+           
+            <asp:Panel runat="server" ID="panel_request">
+               
+                <label><b>Identification type :</b></label>
+                <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:ListItem>Card</asp:ListItem>
+                    <asp:ListItem>Mobile</asp:ListItem>
+                </asp:DropDownList>
+                <label><b>	Is mandatory  :</b></label>
+                <asp:CheckBox ID="CheckBox1" runat="server" />
+            </asp:Panel>
+            <asp:Button ID="Button1" CssClass="btn" runat="server" Text="Update" OnClick="Button1_Click1" />
+            <asp:Button ID="Button3_deleteAct" CssClass="btn btn-danger cancel" runat="server" Text="Delete" OnClick="Button3_deleteAct_Click"  />
+            <asp:Button ID="Button2" runat="server" CssClass="btn-primary" OnClientClick="closeForm()" Width="300px"  Text="Close" />
+        </div>
+    </div>
+        </ContentTemplate>
+    </asp:UpdatePanel>
           </ContentTemplate>
        </asp:UpdatePanel>
         
            
 
 
-           
-
+         </div>  
 
 
 
     <script type = "text/javascript">
         function Confirm() {
-            var confirm_value = document.createElement("INPUT");
-            confirm_value.type = "hidden";
-            confirm_value.name = "confirm_value";
-            if (confirm("Do you want to save data?")) {
-                confirm_value.value = "Yes";
+            var confirmValue = document.createElement("INPUT");
+            confirmValue.type = "hidden";
+            confirmValue.name = "confirm_value";
+            if (confirm("Are you sure want to delete button ?")) {
+                confirmValue.value = "Yes";
             } else {
-                confirm_value.value = "No";
+                confirmValue.value = "No";
             }
-            document.forms[0].appendChild(confirm_value);
+            document.forms[0].appendChild(confirmValue);
         }
 
-      
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+ 
     
     </script>
 
 
-    </div>
+    
 </asp:Content>

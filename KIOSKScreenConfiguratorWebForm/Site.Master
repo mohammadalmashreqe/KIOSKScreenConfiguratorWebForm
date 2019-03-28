@@ -7,15 +7,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> </title>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
+    <asp:ContentPlaceHolder runat="server" ID="Head">
+        
 
+    </asp:ContentPlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     
-
+    <link href="stpstyle.css" rel="stylesheet" />
+    <!-- Including JS File Here -->
+    <script src="multi_step_form.js"></script>
 
 </head>
 <body>
@@ -35,6 +43,7 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
             </Scripts>
@@ -53,15 +62,17 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/temppage.aspx">Add Button</a></li>
+                        <li><a runat="server" href="~/EditButton.aspx">Edit Button </a></li>
+                        <li><a runat="server" href="~/About.aspx">About</a></li>
+                        <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
+                      
                     </ul>
                 </div>
             </div>
         </div>
+       <br/>
        
-        <br />
-        <br />
         <div class ="container">
       <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server"  ShowStartingNode="False" />
 
@@ -79,11 +90,13 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer style="text-align:center">
+           
+            <footer style="text-align: center; position: fixed; left: 0; bottom: 0; width: 100%">
+                <hr />
                 <p style="align-content:center;">&copy; <%: DateTime.Now.Year %> SEDCO</p>
             </footer>
         </div>
+   
 
     </form>
 </body>

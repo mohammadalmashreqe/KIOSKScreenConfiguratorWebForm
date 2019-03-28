@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Web;
 using System.Web.Hosting;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace KIOSKScreenConfiguratorWebForm
@@ -18,14 +14,20 @@ namespace KIOSKScreenConfiguratorWebForm
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = BusinessLayer.Button.getButtons();
-          
-            GridView1.DataBind();
-            
-          
+           // GridView1.DataSource = BusinessLayer.Button.GetButtons();
+
+           //   GridView1.DataBind();
+         GridView1.Columns[0].Visible = false;
+           // GridView1.Columns[0].HeaderText = "ID";
+
+
+
+
+
+
         }
         /// <summary>
-        /// event to add event listner to each row in grid view to be selectable 
+        /// event to add event listener to each row in grid view to be selectable 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -41,7 +43,7 @@ namespace KIOSKScreenConfiguratorWebForm
             }
         }
         /// <summary>
-        /// add event to grid view to redirct to anthor form to edit selected button  
+        /// add event to grid view to redirect to other form to edit selected button  
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -57,10 +59,19 @@ namespace KIOSKScreenConfiguratorWebForm
                         row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                         row.ToolTip = string.Empty;
 
-                        Response.Cookies["ButtonInfo"]["Text"] = row.Cells[2].Text;
                         Response.Cookies["ButtonInfo"]["Name"] = row.Cells[1].Text;
-                        Response.Cookies["ButtonInfo"]["Order"] = row.Cells[3].Text;
-                        Response.Cookies["ButtonInfo"]["id"] = row.Cells[0].Text;
+                        Response.Cookies["ButtonInfo"]["Order"] = row.Cells[2].Text;
+
+                        BusinessLayer.Button b1 = new BusinessLayer.Button
+                        {
+                            Name = Response.Cookies["ButtonInfo"]["Name"],
+                            Order = int.Parse(Response.Cookies["ButtonInfo"]["Order"])
+                        };
+
+
+
+                        Response.Cookies["ButtonInfo"]["id"] = b1.GetId()+""; 
+                       
 
 
                         Response.Redirect("EditSelectedButton.aspx");
@@ -79,7 +90,7 @@ namespace KIOSKScreenConfiguratorWebForm
             }
             catch (Exception ex)
             {
-                String file = HostingEnvironment.MapPath(@"/App_Data/LogFile.txt");
+                string file = HostingEnvironment.MapPath(@"/App_Data/LogFile.txt");
                 ErrorLogger.ErrorLog(file, ex.Message);
             }
 

@@ -9,7 +9,7 @@
       <siteMapNode url="~/EditSelectedButton" title="Edit selected button" description="Edit Selected Button" />
      
     </siteMapNode>
-    <siteMapNode url="~/AddButton" title="Add Button" description="Add Button" />
+    <siteMapNode url="~/temppage" title="Add Button" description="Add Button" />
 
     <siteMapNode url="~/About" title="About Us" description="About Us Page" />
     <siteMapNode url="~/Contact" title="Contact Us" description="Contact Us Page" />

@@ -10,7 +10,7 @@
 namespace KIOSKScreenConfiguratorWebForm {
     
     
-    public partial class _Default {
+    public partial class Default {
         
         /// <summary>
         /// contentArea control.

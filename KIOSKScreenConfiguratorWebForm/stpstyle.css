@@ -1,0 +1,205 @@
+﻿@import "http://fonts.googleapis.com/css?family=Droid+Serif";  /* This Line is to import Google font style */
+.content{
+    width:960px;
+    margin:20px auto
+}
+.main{
+    float:left;
+    width:650px;
+    margin-top:80px
+}
+#progressbar{
+    margin:0;
+    padding:0;
+    font-size:18px
+}
+#active1{
+    color:red
+}
+
+
+input[type=text],input[type=password],select{
+    width:100%;
+    margin:10px 0;
+    height:40px;
+    padding:5px;
+    border:3px solid #000000;
+    border-radius:4px
+}
+textarea{
+    width:100%;
+    margin:10px 0;
+    height:70px;
+    padding:5px;
+    border:3px solid #ecb0dc;
+    border-radius:4px
+}
+input[type=submit],input[type=button]{
+    width:138px;
+    margin-top: 15px ;
+    padding:5px;
+    height:40px;
+    background-color:black;
+    border:none;
+    border-radius:4px;
+    color:#fff;
+    font-family:'Droid Serif',serif
+}
+h2,p{
+    text-align:center;
+    font-family:'Droid Serif',serif
+}
+li{
+
+    font-family:'Droid Serif',serif
+}
+
+#regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+}
+
+/* Style the input fields */
+input {
+    padding: 10px;
+  
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+    background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #4CAF50;
+}
+span {
+    content: "\2713";
+}
+
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+  However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+
+/************************************************************************/
+/* PSEUDO-TOGGLE BUTTON MADE OF ASP.NET CHECKBOX AND CSS3*/
+div.divToggleButton input[type=checkbox] {
+    display: none;
+    white-space: nowrap;
+}
+
+div.divToggleButton label {
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+/* set the size of the pseudo-toggle button control */
+div.divToggleButton input[type=checkbox]:checked + label::before,
+div.divToggleButton input[type=checkbox]:not(:checked) + label::before,
+div.divToggleButton input[type=checkbox] + label {
+    width: 40pt;
+    height: 40pt;
+    line-height: 40pt;
+}
+
+/* additional styling: rounded border, gradient */
+div.divToggleButton input[type=checkbox] + label {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16pt;
+    font-family: Arial, Calibri;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    background: #f0f0f0;
+    /* gradient style (optional)*/
+    background-image: -moz-linear-gradient(top, #fdfdfd, #f9f9f9 50%, #e5e5e5 50%, #fdfdfd);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#fdfdfd), color-stop(0.5, #f9f9f9), color-stop(0.5, #e5e5e5 ), to(#fdfdfd));
+    background-image: linear-gradient(to bottom, #fdfdfd, #f9f9f9 50%, #e5e5e5 50%, #fdfdfd);
+}
+
+/* content to display and style pertinent to unchecked state*/
+div.divToggleButton input[type=checkbox]:not(:checked) + label::before {
+    content: "M";
+    color: #303030;
+    opacity: 0.6;
+}
+
+/* content to display and style pertinent to checked state*/
+div.divToggleButton input[type=checkbox]:checked + label::before {
+    content: "A\2714";
+    color: #000090;
+    font-weight: bold;
+}
+/************************************************************************/
